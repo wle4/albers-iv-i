@@ -1,47 +1,36 @@
-//test
 
-let clrs = {
-  top:'red',
-  m1: 'yellow',
-  m2: 'green',
-  bottom: 'blue',
-  strip: 'purple',
-}
+let clrs = [
+'#E27F34', //top 0
+'#FEF254', //middle top 1
+'#A36C33', //middle strip 2
+'#042060', //middle bottom 3
+'#3778AE' //bottom 4
+]
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  noStroke();
 }
 
 function draw() {
-  background(220);
-  //top
-  fillRect(0, height/2, clrs.top);
-  //bottom
-  fillRect(height/2, height/2, clrs.bottom);
-  //center strip
-  strip();
-  //top middle
-  fillRect(height/3, height/6, clrs.m1); 
-  //bottom middle
-  fillRect(height/2, height/6, clrs.m2); 
-  if(mouseIsPressed){
-      //top
-    fillRect(0, height/2, clrs.top);
-    //bottom
-    fillRect(height/2, height/2, clrs.bottom);
-    strip(); 
-    
-  }
+ background(220);
+ canvasRect(clrs[4], height/2, height/2, false);
+ canvasRect(clrs[0], height/2, 0, false);
+ fill(clrs[2]); 
+ rect(width * 1/3, height * 1/6, width * 1/3, height * 2/3); 
+ canvasRect(clrs[1], height/6, height/3, true);
+ canvasRect(clrs[3], height/6, height/2, true);
+
+
 }
 
-function fillRect(tp, hght, clr){
-  fill(clr);
-  noStroke();
-  rect(0, tp, width, hght);
-}
-
-function strip(){
-  //center
-  fill(clrs.strip);
-  rect(width/3, height/6, width/3, height * 2/3);
-  
+function canvasRect(clr, hgt, y_offset, clickable) {
+	fill(clr);
+	if((clickable == true) && (mouseIsPressed == false)){
+		rect(0, y_offset, width, hgt);
+	} 
+	if(clickable == false){
+		rect(0, y_offset, width, hgt);
+	}
 }
