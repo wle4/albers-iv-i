@@ -1,11 +1,11 @@
 //test
 
 let clrs = {
-  top:'#E27F34',
-  m1: '#FEF254',
-  m2: '#042060',
-  bottom: '#3778AE',
-  strip: '#A36C33',
+  top:'red',
+  m1: 'yellow',
+  m2: 'green',
+  bottom: 'blue',
+  strip: 'purple',
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
