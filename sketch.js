@@ -3,8 +3,9 @@ let clrs = [
 '#3339FF', //top 0
 '#CE33FF', //middle top 1
 '#FF3368', //middle strip 2
-'#74FF33', //middle bottom 3
-'#FF9F33' //bottom 4
+'#FF33EC', //middle bottom 3
+'#A533FF' //bottom 4
+//make the colors more "sunset-like"
 ]
 
 
